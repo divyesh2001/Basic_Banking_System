@@ -1,0 +1,93 @@
+-- phpMyAdmin SQL 
+
+--
+-- Database: `bankuser`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `transaction`
+--
+
+CREATE TABLE `transaction` (
+  `sno` int(3) NOT NULL,
+  `sender` text NOT NULL,
+  `receiver` text NOT NULL,
+  `balance` int(8) NOT NULL,
+  `datetime` datetime NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `transaction`
+--
+
+INSERT INTO `transaction` (`sno`, `sender`, `receiver`, `balance`, `datetime`) VALUES
+|1|dharmendra|Amit|20000|2021-06-17 13:03:24
+|2|Amit|Ashish Kumar|10000|2021-06-17 13:10:06
+|3|Anmol kumar|Rohit Kumar|4000|2021-06-17 13:14:56
+|4|Jatin singh|Sudhansu|10000|2021-06-17 13:15:12
+|5|Sudhansu|Amit|10000|2021-06-17 13:15:35
+|6|pratibha|Rohit Kumar|20000|2021-06-17 13:16:01
+|7|Mohit Kumar|dharmendra|15000|2021-06-17 13:16:29
+|8|Vikash Kumar|Amit|21000|2021-06-17 13:16:52
+|9|Anmol kumar|Mohit Kumar|17000|2021-06-17 13:17:27
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(3) NOT NULL,
+  `name` text NOT NULL,
+  `email` varchar(30) NOT NULL,
+  `balance` int(8) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `name`, `email`, `balance`) VALUES
+|1|dharmendra|dharmendra@gmail.com|55000
+|2|Amit|amit@gmail.com|95000
+|3|Anmol kumar|anmol@gmail.com|60000
+|4|Jatin singh|jatin@gmail.com|70000
+|5|Vikash Kumar|vikash@gmail.com|64000
+|6|Sudhansu|inspector@gmail.com|75000
+|7|pratibha|pratibha@gmail.com|70000
+|8|Mohit Kumar|Mohit@gmail.com|47000
+|9|Rohit Kumar|rohit@gmail.com|100000
+|10|Ashish Kumar|ashish@gmail.com|111000
+--
+-- Indexes for table `transaction`
+--
+ALTER TABLE `transaction`
+  ADD PRIMARY KEY (`sno`);
+
+--
+-- Indexes for table `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `transaction`
+--
+ALTER TABLE `transaction`
+  MODIFY `sno` int(3) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(3) NOT NULL AUTO_INCREMENT;
+COMMIT;
+
+
